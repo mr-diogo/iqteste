@@ -98,7 +98,11 @@ for par in P['digital']:
                     i += 1
                     catalogacao[par][horario].update({'mg'+str(i): {'verde': 0, 'vermelha': 0, 'doji':0, '%':0}})
                     
-                    mg_time = str(datetime.strptime((datetime.now()).strftime('%Y-%m-%d ') + mg_time, '%Y-%m-%d %H:%M')) + timedelta(minutes=timeframe)[11:-3]
+                    #mg_time = str(datetime.strptime((datetime.now()).strftime('%Y-%m-%d ') + mg_time, '%Y-%m-%d %H:%M')) + timedelta(minutes=timeframe)[11:-3]
+                    #as proximas tres linhas(103, 104, 105) equivalem a linha 101, faça testes em cada um para saber qual é a problematica
+                    mg_time2 = (datetime.now()).strftime('%Y-%m-%d ')
+                    mg_time2 = datetime.strptime(mg_time2 + mg_time, '%Y-%m-%d %H:%M')
+                    mg_time2 = str(mg_time2) + timedelta(minutes=timeframe)[11:-3]
 
                     if mg_time in catalogacao[par]:
                         catalogacao[par][horario]['mg' + str(i)]['verde']+=catalogacao[par][mg_time]['verde']+soma['verde']
