@@ -1,4 +1,4 @@
-from iqoptionapi.stable_api import IQ_Option
+from iqoptionapi.stable_api import IQ_Option #https://www.youtube.com/watch?v=HvIkmX0v-UU&t=1639s Link do Vídeo 
 import sys
 from datetime import datetime, timedelta
 from colorama import init, Fore, Back
